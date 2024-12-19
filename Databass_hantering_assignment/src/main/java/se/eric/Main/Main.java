@@ -1,6 +1,5 @@
 package se.eric.Main;
 
-import se.eric.DatabassH.WorkRole.WorkRoleDAOImpl;
 
 public class Main {
 
@@ -27,8 +26,9 @@ public class Main {
                     System.out.println("Invalid input");
                 }
             }
-            InputHandler.close();
+
         }
+        InputHandler.close();
     }
 
 }

@@ -66,11 +66,13 @@ public class WorkRole {
 
     @Override
     public String toString() {
-        return "WorkRole " +
-                "roleID=" + roleID +
-                ", title='" + title  +
-                ", salary=" + salary +
-                ", creationDate=" + creationDate+",\n" +
-                "description='" + description + '\'' ;
+        return "-------------------------------------"+
+                "\nWorkRole " +
+                "\nroleID = " + roleID +
+                "\ntitle = " + title  +
+                "\nsalary = " + salary +
+                "\ncreationDate = " + creationDate +
+                "\ndescription = " + description +
+                "\n-------------------------------------" ;
     }
 }

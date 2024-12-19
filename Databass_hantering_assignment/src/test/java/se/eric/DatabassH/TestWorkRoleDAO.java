@@ -36,7 +36,7 @@ public class TestWorkRoleDAO {
                 System.out.println(workRole.getTitle());
             }
 
-            Assertions.assertTrue(testWorkRoles.size() > 0);
+            Assertions.assertTrue(testWorkRoles.size() == 1);
         }catch (SQLException e){
             e.printStackTrace();
         }
