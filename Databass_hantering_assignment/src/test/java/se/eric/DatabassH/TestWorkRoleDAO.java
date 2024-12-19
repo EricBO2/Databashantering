@@ -17,13 +17,13 @@ public class TestWorkRoleDAO {
 
     WorkRoleDAOImpl workRoleDAO;
 
-    @BeforeEach
+    @BeforeEach                                 //sets upp a work role DAO to prepare for the test
     public void setUp() throws SQLException {
         workRoleDAO = new WorkRoleDAOImpl();
     }
 
     @Test
-    public void TestInsertWorkRole(){
+    public void TestInsertWorkRole(){           //test if insert work role works
         WorkRole testWorkRole = new WorkRole("Koder","A koder builds programs using different programing language lick jav, c++, c# ect.",
                 30000.4,java.sql.Date.valueOf("2023-12-09"));
         List<WorkRole> testWorkRoles = new ArrayList<WorkRole>();
@@ -40,16 +40,9 @@ public class TestWorkRoleDAO {
         }catch (SQLException e){
             e.printStackTrace();
         }
-        finally {
-
-        }
-
     }
 
-
-
-
-    @AfterEach
+    @AfterEach                                  //cleans upp the database after the test
     public void clean(){
         Connection conn = null;
         Statement stmt = null;

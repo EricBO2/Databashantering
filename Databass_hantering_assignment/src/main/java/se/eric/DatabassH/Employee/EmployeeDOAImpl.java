@@ -10,7 +10,7 @@ import java.util.List;
 
 public class EmployeeDOAImpl implements EmployeeDOA{
     @Override
-    public void insertEmployee(Employee employee) throws SQLException {
+    public void insertEmployee(Employee employee) throws SQLException {             //method to insert new employee
         Connection conn = null;
         PreparedStatement stmt = null;
         String sql= "INSERT INTO EMPLOYEE (NAME,EMAIL,PASSWORD,ROLE_ID)"+
@@ -38,7 +38,7 @@ public class EmployeeDOAImpl implements EmployeeDOA{
     }
 
     @Override
-    public List<Employee> getEmployees() throws SQLException {
+    public List<Employee> getEmployees() throws SQLException {          //method to get all employee
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -66,8 +66,8 @@ public class EmployeeDOAImpl implements EmployeeDOA{
     }
 
     @Override
-    public Employee getEmployee(Integer employeeID) throws SQLException {
-        Connection conn = null;
+    public Employee getEmployee(Integer employeeID) throws SQLException {           //method to get a singel employee
+        Connection conn = null;                                                     //newer used but left in for potential uses
         PreparedStatement stmt = null;
         ResultSet rs = null;
         Employee employee = null;
@@ -92,8 +92,8 @@ public class EmployeeDOAImpl implements EmployeeDOA{
     }
 
     @Override
-    public void deleteEmployee(Integer employeeID) throws SQLException {
-        Connection conn = null;
+    public void deleteEmployee(Integer employeeID) throws SQLException {                    //method to delete a employee
+        Connection conn = null;                                                             //newer used but left in for potential uses
         PreparedStatement stmt = null;
 
         try{
@@ -114,8 +114,8 @@ public class EmployeeDOAImpl implements EmployeeDOA{
     }
 
     @Override
-    public void updateEmployee(Employee employee, int employeeID) throws SQLException {
-        Connection conn = null;
+    public void updateEmployee(Employee employee, int employeeID) throws SQLException {     //method to update a employee
+        Connection conn = null;                                                             //newer used but left in for potential uses
         PreparedStatement stmt = null;
         try{
             conn = JDBCUtil.getConnection();
@@ -137,7 +137,7 @@ public class EmployeeDOAImpl implements EmployeeDOA{
         }
     }
 
-    private Employee buildEmployee(ResultSet rs) throws SQLException {
+    private Employee buildEmployee(ResultSet rs) throws SQLException {                      //converts result set to employee
         int employeeID = rs.getInt("EMPLOYEE_ID");
         String name = rs.getString("NAME");
         String email = rs.getString("EMAIL");

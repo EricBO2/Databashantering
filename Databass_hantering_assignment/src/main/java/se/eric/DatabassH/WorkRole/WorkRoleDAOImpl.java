@@ -10,7 +10,7 @@ public class WorkRoleDAOImpl implements WorkRoleDAO {
 
 
     @Override
-    public void insertWorkRole(WorkRole workRole) throws SQLException {
+    public void insertWorkRole(WorkRole workRole) throws SQLException {  //method to inser a new work role
         Connection conn = null;
         PreparedStatement stmt = null;
         String sql= "INSERT INTO WORK_ROLE (TITLE,DESKRIPTION,SALARY,CREATION_DATE)"+
@@ -38,7 +38,7 @@ public class WorkRoleDAOImpl implements WorkRoleDAO {
     }
 
     @Override
-    public List<WorkRole> getWorkRols() throws SQLException {
+    public List<WorkRole> getWorkRols() throws SQLException {           //method to get all work roles
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -66,7 +66,7 @@ public class WorkRoleDAOImpl implements WorkRoleDAO {
     }
 
     @Override
-    public WorkRole getWorkRole(Integer roleID) throws SQLException {
+    public WorkRole getWorkRole(Integer roleID) throws SQLException {   //method to get a singel work role
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -92,7 +92,7 @@ public class WorkRoleDAOImpl implements WorkRoleDAO {
     }
 
     @Override
-    public void deleteWorkRole(Integer roleID) throws SQLException {
+    public void deleteWorkRole(Integer roleID) throws SQLException {    //method to delete a work role
         Connection conn = null;
         PreparedStatement stmt = null;
 
@@ -114,7 +114,7 @@ public class WorkRoleDAOImpl implements WorkRoleDAO {
     }
 
     @Override
-    public void updateWorkRole(WorkRole workRole, int roleID) throws SQLException {
+    public void updateWorkRole(WorkRole workRole, int roleID) throws SQLException { //method to update a work role
         Connection conn = null;
         PreparedStatement stmt = null;
         try{
@@ -137,7 +137,7 @@ public class WorkRoleDAOImpl implements WorkRoleDAO {
         }
     }
 
-    private WorkRole buildWorkRole(ResultSet rs) throws SQLException {
+    private WorkRole buildWorkRole(ResultSet rs) throws SQLException {                      //method to convert result set to work role
         int roleId = rs.getInt("ROLE_ID");
         String title = rs.getString("TITLE");
         String deskription = rs.getString("DESKRIPTION");

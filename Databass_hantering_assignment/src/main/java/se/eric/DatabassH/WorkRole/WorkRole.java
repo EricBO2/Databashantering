@@ -15,7 +15,7 @@ public class WorkRole {
         this.description = description;
         this.salary = salary;
         this.creationDate = creationDate;
-    }
+    }                                               //work role class to mach assignment specification
 
     public WorkRole(String title, String description, Double salary, Date creationDate) {
         this.title = title;

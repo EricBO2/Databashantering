@@ -9,7 +9,7 @@ public class JDBCUtil {
 
     private static Properties properties = new Properties();
 
-    static {
+    static {                                                    //gets properties from application properties file
         try (InputStream input = JDBCUtil.class.getClassLoader().getResourceAsStream("application.properties")) {
             if (input == null) {
                 throw new IOException("Unable to find application.properties");
@@ -21,7 +21,7 @@ public class JDBCUtil {
         }
     }
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {      //creates a connection whit databas
 
         Driver hsqlDriver = new org.hsqldb.jdbc.JDBCDriver();
 
@@ -40,7 +40,7 @@ public class JDBCUtil {
         return conn;
     }
 
-    public static void closeConnection(Connection conn) {
+    public static void closeConnection(Connection conn) {       //closes database connection
         try {
             if (conn != null) {
                 conn.close();
@@ -50,7 +50,7 @@ public class JDBCUtil {
         }
     }
 
-    public static void closeStatement(Statement stmt) {
+    public static void closeStatement(Statement stmt) {         //closes database statement
         try {
             if (stmt != null) {
                 stmt.close();
@@ -60,7 +60,7 @@ public class JDBCUtil {
         }
     }
 
-    public static void closeResultSet(ResultSet rs) {
+    public static void closeResultSet(ResultSet rs) {           //closes database result set
         try {
             if (rs != null) {
                 rs.close();
@@ -70,7 +70,7 @@ public class JDBCUtil {
         }
     }
 
-    public static void commit(Connection conn) {
+    public static void commit(Connection conn) {                    //commits changes to the databas
         try {
             if (conn != null) {
                 conn.commit();
@@ -80,7 +80,7 @@ public class JDBCUtil {
         }
     }
 
-    public static void rollback(Connection conn) {
+    public static void rollback(Connection conn) {                  //rollbacks the databas if something gos wrong
         try {
             if (conn != null)
                 conn.rollback();
@@ -90,7 +90,7 @@ public class JDBCUtil {
         }
     }
 
-    public static String getDatabaseProductName(Connection conn) {
+    public static String getDatabaseProductName(Connection conn) {      //un used
         try {
             if (conn != null) {
                 DatabaseMetaData metadata = conn.getMetaData();

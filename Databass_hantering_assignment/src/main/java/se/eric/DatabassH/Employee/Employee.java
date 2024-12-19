@@ -15,7 +15,7 @@ public class Employee {
         this.email = email;
         this.password = password;
         this.workRole = workRole;
-    }
+    }                                                   //employee class to mach assignment specification
 
     public Employee(String name, String email, String password, WorkRole workRole) {
         this.name = name;
